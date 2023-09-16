@@ -1,0 +1,121 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'); */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    /* background: rgb(0,0,0);
+    background: linear-gradient(24deg, rgba(0,0,0,1) 0%, rgba(136,165,188,1) 28%, rgba(74,190,213,1) 100%); */
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: cursive;
+}
+
+.wrap {
+    margin: auto;
+    width: 90vw;
+    max-width: 960vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pinn img{
+    max-width: 85vw;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 35px;
+    border-radius: 7px;
+    margin: 3px;
+    text-align: center center;
+    background-color: rgb(170, 170, 170);
+}
+
+.progress-bar p {
+    position: absolute;
+    padding: 5px;
+}
+
+.progress-bar * {
+    border-radius: 7px;
+}
+
+#hunger {
+    
+}
+#health {
+
+}
+#happiness {
+
+}
+
+.progress-hunger {
+    background-color: rgb(228, 133, 24);
+}
+.progress-health {
+    background-color: red;
+}
+.progress-happiness {
+    background-color: lime;
+}
+
+.progress-hunger, .progress-health, .progress-happiness {
+    transition: ease 200ms;
+}
+
+
+
+.shopping{
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 270px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.cosmetic{
+    padding: 5px;
+    user-select: none;
+    transition: ease 200ms;
+}
+
+.cosmetic:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.math{
+    position: absolute;
+    right: 1vw;
+    top: 3vw;
+    height: 90vh;
+    width: 80vw;
+    max-width: 500px;
+    border-radius: 25px;
+    padding: 20px;
+
+    text-align: center;
+
+
+    background: rgb(46,26,26);
+    background: -moz-linear-gradient(31deg, rgba(46,26,26,0.5) 0%, rgba(0,142,255,0.7) 50%, rgba(52,195,224,0.7) 100%);
+    background: -webkit-linear-gradient(31deg, rgba(46,26,26,0.5) 0%, rgba(0,142,255,0.7) 50%, rgba(52,195,224,0.7) 100%);
+    background: linear-gradient(31deg, rgba(46,26,26,0.5) 0%, rgba(0,142,255,0.7) 50%, rgba(52,195,224,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2e1a1a",endColorstr="#34c3e0",GradientType=1);
+}
