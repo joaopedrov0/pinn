@@ -14,3 +14,6 @@ Pinn é um jogo onde você deve resolver contas de matemática o mais rápido po
 - Padronizar fonte
 - Corrigir funcionalidade de 
 - Adicionar novos alimentos e recursos
+- Deixar tudo em português
+- Organizar o código separando os arquivos de cada funcionalidade, com vários blocos de código em arquivos diferentes.
+- Favicon

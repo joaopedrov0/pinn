@@ -25,13 +25,21 @@ let  happinessRunner =
 
 var healthRunner
 
+var sick = false
+
 function getSick(){
     Pinn.sick = Math.random().toFixed(1)
     console.log(Pinn.sick)
+    sick = true
     healthRunner = 
         setInterval(function() {
-            if(Pinn.health === 0) clearInterval(healthRunner)
-            Pinn.health--
+            if (!sick) clearInterval(healthRunner)
+            if(Pinn.health <= 0) {
+                dead()
+            } else {
+                Pinn.health--
+            }
+            
             renderStatus()
             }, 5000 * Pinn.sick)
 }
@@ -43,7 +51,7 @@ function Medicine(){
     if(Pinn.money >= 150) {
         Pinn.money -= 150
         Pinn.sick = 1
-        clearInterval(healthRunner)
+        sick = false
     }
     moneyHTML.innerText = `Money: ${Pinn.money}`
 }
@@ -142,7 +150,7 @@ let time = 0
 let timeRunner = 
     setInterval(function() {
         time++
-        timer.innerText = `Lifetime: ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`
+        timer.innerText = `Tempo de vida: ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`
     }, 1000)
 
 
@@ -156,8 +164,11 @@ function beautifyNumber(number){
 
 function dead(){
     clearInterval(timeRunner)
+    clearInterval(hungerRunner)
+    clearInterval(healthRunner)
+    clearInterval(happinessRunner)
     renderPinn()
-    alert(`Pinn has dead, your score was ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`)
+    alert(`Pinn morreu, seu tempo de sobrevivência foi de ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`)
 }
 
 //capitalism area
@@ -301,7 +312,7 @@ const Shopping = {
     ],
     mentalCare: [
         {
-            name: 'Psychologist',
+            name: 'Psicólogo',
             intensity: '4',
             price: '400'
         },
