@@ -33,13 +33,17 @@ function getSick(){
     sick = true
     healthRunner = 
         setInterval(function() {
-            if (!sick) clearInterval(healthRunner)
-            if(Pinn.health <= 0) {
-                dead()
+            if (!sick) {
+                clearInterval(healthRunner)
+            } else if (sick) {
+                if(Pinn.health <= 0) {
+                    dead()
+                } else {
+                    Pinn.health--
+                }
             } else {
-                Pinn.health--
+                console.error('Health Runner error occurred. "Sick" is not a valid value')
             }
-            
             renderStatus()
             }, 5000 * Pinn.sick)
 }
