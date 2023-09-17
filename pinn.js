@@ -56,13 +56,13 @@ function Food(satiety, quality, price){
         Pinn.hunger += satiety * 5
         switch(quality) {
             case 1:
-                if(percentage >= 50) getSick()
+                if(percentageForSick >= 50) getSick()
                 break
             case 2:
-                if(percentage >= 25) getSick()
+                if(percentageForSick >= 25) getSick()
                 break
             case 3:
-                if(percentage >= 10) getSick()
+                if(percentageForSick >= 10) getSick()
                 break
             default:
                 break
