@@ -30,7 +30,7 @@ function getSick(){
     console.log(Pinn.sick)
     healthRunner = 
         setInterval(function() {
-            if(Pinn.health === 0) clearInterval(health)
+            if(Pinn.health === 0) clearInterval(healthRunner)
             Pinn.health--
             renderStatus()
             }, 5000 * Pinn.sick)
