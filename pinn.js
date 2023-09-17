@@ -345,3 +345,11 @@ function generateShopping(){
 }
 
 generateShopping()
+
+
+function toggleShop() {
+    let button = document.querySelector('.button-shop')
+    let shopping = document.querySelector('.shopping')
+    button.classList.toggle('active')
+    shopping.classList.toggle('active')
+}
