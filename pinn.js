@@ -23,7 +23,7 @@ let  happinessRunner =
         renderStatus()
     }, 10000 * Pinn.sick)
 
-let healthRunner
+var healthRunner
 
 function getSick(){
     Pinn.sick = Math.random().toFixed(1)

@@ -11,3 +11,5 @@ Pinn é um jogo onde você deve resolver contas de matemática o mais rápido po
 - Arrumar mecânica de doença (as vezes desce rápido demais)
 - Final melhorado (botão de reinício e pop-up em html)
 - Explicação das mecânicas do jogo
+- Padronizar fonte
+- Corrigir funcionalidade de medicina
