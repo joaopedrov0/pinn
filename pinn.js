@@ -33,10 +33,11 @@ function getSick(){
     sick = true
     healthRunner = 
         setInterval(function() {
-            if (!sick) {
+            if (!sick && Pinn.health > 0) {
                 clearInterval(healthRunner)
             } else if (sick) {
                 if(Pinn.health <= 0) {
+                    console.log('diying')
                     dead()
                 } else {
                     Pinn.health--
@@ -171,6 +172,7 @@ function dead(){
     clearInterval(hungerRunner)
     clearInterval(healthRunner)
     clearInterval(happinessRunner)
+    sick = false
     renderPinn()
     alert(`Pinn morreu, seu tempo de sobrevivência foi de ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`)
 }
