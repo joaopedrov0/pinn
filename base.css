@@ -46,47 +46,7 @@ body {
     max-width: 85vw;
 }
 
-.progress-bar {
-    width: 300px;
-    height: 35px;
-    border-radius: 7px;
-    margin: 3px;
-    text-align: center center;
-    background-color: rgb(170, 170, 170);
-}
 
-.progress-bar p {
-    position: absolute;
-    padding: 5px;
-}
-
-.progress-bar * {
-    border-radius: 7px;
-}
-
-#hunger {
-    
-}
-#health {
-
-}
-#happiness {
-
-}
-
-.progress-hunger {
-    background-color: rgb(228, 133, 24);
-}
-.progress-health {
-    background-color: red;
-}
-.progress-happiness {
-    background-color: lime;
-}
-
-.progress-hunger, .progress-health, .progress-happiness {
-    transition: ease 200ms;
-}
 
 
 
@@ -99,73 +59,4 @@ img{
 
 .mobile{
     display: none;
-}
-@media screen and (max-width: 960px){
-    .math{
-        bottom: 1vh;
-        height: 230px;
-        top: auto;
-        right: auto;
-        margin: auto;
-        position: static;
-    }
-    .shopping{
-        left: -100%;
-        background-color: rgba(255, 255, 255, 0.9);
-    }
-    body{
-        display: flex;
-        flex-direction: column;
-    }
-    .statusArea{
-        margin-top: -50px;
-    }
-    img{
-        height: 200px;
-    }
-    h2{
-        font-size: 18px;
-    }
-    h3{
-        font-size: 12px;
-    }
-    .mobile{
-        display: block;
-    }
-    .button-shop{
-        position: fixed;
-        top: 5px;
-        left: 5px;
-        width: 40px;
-        height: 40px;
-        background-color: #ffffffa6;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        transition: ease 200ms;
-
-        z-index: 5;
-    }
-
-    .button-shop::before{
-        content: '$';
-    }
-
-    .button-shop.active{
-        left: 270px;
-    }
-
-    .button-shop.active::before{
-        content: 'X';
-    }
-
-    .shopping.active{
-        left: 0px;
-    }
-    .money{
-        position: fixed;
-        right: 5px;
-        top: 5px;
-    }
 }

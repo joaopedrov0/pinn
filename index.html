@@ -11,8 +11,27 @@
         <link rel="stylesheet" href="styles/math.css">
         <link rel="stylesheet" href="styles/shopping.css">
         <link rel="stylesheet" href="styles/status.css">
+        <link rel="stylesheet" href="styles/lastest.css">
+        <link rel="stylesheet" href="styles/info.css">
+        <link rel="stylesheet" href="styles/mobile.css">
     </head>
     <body>
+        <div class="info-btn" onclick="toggleInfo()">?</div>
+        <div class="info hidden">
+            <div class="info-btn" onclick="toggleInfo()">Voltar para o jogo</div>
+            <div class="wrap-info">
+                <h2>Como jogar Pinn?</h2>
+                <h3>Objetivo</h3>
+                <p>O objetivo desse jogo é resolver contas o mais rápido possível para conseguir dinheiro, e assim conseguir comprar o que Pinn precisa para sobreviver! Como comida, cuidados médicos ou até mesmo algumas coisas para melhorar sua saúde mental.</p>
+                <h3>Ganho de dinheiro</h3>
+                <p>No máximo, você receberá 20 de dinheiro por conta acertada. A cada segundo que se passa, esse valor diminuí em 2, chegando ao mínimo de 2, que será o quanto você vai ganhar caso acerte a questão.</p>
+                <h3>Saúde mental (felicidade)</h3>
+                <p>A felicidade de Pinn diminuí lentamente com o tempo, porém ela pode começar a diminuir mais rapidamente caso ele fique doente.</p>
+                <h3>Saúde</h3>
+                <p>Uma boa alimentação é essencial para uma vida saudável, e para Pinn não é diferente! Caso ele coma comidas mais industrializadas, sua fome será amplamente saciada, porém ele correrá o risco de ficar doente (quanto menor a qualidade do alimento maior a chance de ficar doente). Para resolver isso, você pode comprar "Curar doença"(150$) para fazer com que a doença seja curada. Enquanto não for, ela irá gradualmente diminuindo a saude de Pinn, de acordo com a gravidade da doença. Doenças também podem afetar sua saúde mental.</p>
+                
+            </div>
+        </div>
         <div class="mobile button-shop" onclick="toggleShop()"></div>
         <div class="wrap">
             <h1>Pinn</h1>
@@ -65,12 +84,16 @@
         <div class="math">
             <h2>Desafios Matemáticos</h2>
             <h3>Resolva contas de matemática o mais rápido que puder para manter Pinn vivo!</h3>
+            <div class="lastest"></div>
+            <h6 class="lastestElapsedTime"></h6>
             <p class="challengeDescription"></p>
+            <h6 class="elapsedTime"></h6>
             <form id="answerForm" action="">
                 <input id="answerInput" autocomplete="off" placeholder="Digite aqui..." /><button>Confirmar</button>
             </form>
         </div>
 
         <script src="pinn.js"></script>
+        <script src="info.js"></script>
     </body>
 </html>

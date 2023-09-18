@@ -1,0 +1,41 @@
+.progress-bar p {
+    position: absolute;
+    padding: 5px;
+}
+
+.progress-bar * {
+    border-radius: 7px;
+}
+
+#hunger {
+    
+}
+#health {
+
+}
+#happiness {
+
+}
+
+.progress-hunger {
+    background-color: rgb(228, 133, 24);
+}
+.progress-health {
+    background-color: red;
+}
+.progress-happiness {
+    background-color: lime;
+}
+
+.progress-hunger, .progress-health, .progress-happiness {
+    transition: ease 200ms;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 35px;
+    border-radius: 7px;
+    margin: 3px;
+    text-align: center center;
+    background-color: rgb(170, 170, 170);
+}

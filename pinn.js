@@ -80,7 +80,7 @@ function Food(satiety, quality, price){
                 break
         }
     }
-    moneyHTML.innerText = `Money: ${Pinn.money}`
+    moneyHTML.innerText = `Dinheiro: ${Pinn.money}`
     if(Pinn.hunger > 100){Pinn.hunger = 100}
 }
 
@@ -186,19 +186,36 @@ let moneyHTML = document.querySelector('.money')
 const mathChallengeHTML = document.querySelector('.challengeDescription')
 const answerForm = document.querySelector('#answerForm')
 const answerInput = document.querySelector('#answerInput')
+const lastest = document.querySelector('.lastest')
+const lastestElapsedTime = document.querySelector('.lastestElapsedTime')
 
 let reward = 20
 let rewardTimer = setInterval(() => {if(reward > 2) {reward = reward -2}}, 1000)
+
+let elapsedTimeHTML = document.querySelector('.elapsedTime')
+let elapsedTime = 0
+let elapsedTimeInterval = setInterval(() => {
+    elapsedTime++
+    elapsedTimeHTML.innerText = `Tempo nessa questão: ${elapsedTime} segundos`
+}, 1000)
 
 
 answerForm.addEventListener('submit', (e) => {
     e.preventDefault()
     let answer = answerInput.value
-    if(answer == currentAnswer){Pinn.money += reward}
-    moneyHTML.innerText = `Money: ${Pinn.money}`
+    if(answer == currentAnswer){
+        Pinn.money += reward
+        lastest.innerHTML = `<h4 class="correct">Sua última resposta: ${answer} <br> Ultima resposta correta: ${currentAnswer}</h4>`
+    } else {
+        lastest.innerHTML = `<h4 class="wrong">Sua última resposta: ${answer} <br> Ultima resposta correta: ${currentAnswer}</h4>`
+    }
+    moneyHTML.innerText = `Dinheiro: ${Pinn.money}`
     answerInput.value = ''
     generateChallenge()
     reward = 20
+    lastestElapsedTime.innerText = `Tempo na última conta: ${elapsedTime} segundos`
+    elapsedTime = 0
+    elapsedTimeHTML.innerText = `Tempo nessa questão: ${elapsedTime} segundos`
 })
 
 function random(maxDigits, float, negative){
