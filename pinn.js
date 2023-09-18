@@ -255,7 +255,8 @@ function generateChallenge(){
     }
     
     let firstNumber = random(difficulty, float, negative) + 1
-    let operation = choose([
+    let operation = choose(
+        [
         '+',
         '-',
         '*', 
