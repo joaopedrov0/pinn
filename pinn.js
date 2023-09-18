@@ -203,9 +203,10 @@ let elapsedTimeInterval = setInterval(() => {
 answerForm.addEventListener('submit', (e) => {
     e.preventDefault()
     let answer = answerInput.value
-    if(answer == currentAnswer){
+    if(Number(answer) === Number(currentAnswer)){
         Pinn.money += reward
         lastest.innerHTML = `<h4 class="correct">Sua última resposta: ${answer} <br> Ultima resposta correta: ${currentAnswer}</h4>`
+        console.log(`${mathChallengeHTML.innerText}: ${currentAnswer}`)
     } else {
         lastest.innerHTML = `<h4 class="wrong">Sua última resposta: ${answer} <br> Ultima resposta correta: ${currentAnswer}</h4>`
     }
@@ -253,9 +254,14 @@ function generateChallenge(){
         negative = true
     }
     
-    let firstNumber = random(difficulty, float, negative)
-    let operation = choose(['+', '-', '*', '/'])
-    let secondNumber = random(difficulty, float, negative)
+    let firstNumber = random(difficulty, float, negative) + 1
+    let operation = choose([
+        '+',
+        '-',
+        '*', 
+        // '/'
+        ])
+    let secondNumber = random(difficulty, float, negative) + 1
 
     currentAnswer = eval(`${firstNumber} ${operation} ${secondNumber}`)
     mathChallengeHTML.innerText = `${firstNumber} ${operation} ${secondNumber}`
