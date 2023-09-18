@@ -16,7 +16,6 @@
         max-width: 100vw;
         max-height: 100vh;
         overflow-x: hidden;
-        overflow-y: hidden;
     }
     .statusArea{
         margin-top: -50px;
