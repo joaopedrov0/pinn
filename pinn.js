@@ -33,7 +33,7 @@ function getSick(){
     sick = true
     healthRunner = 
         setInterval(function() {
-            if (!sick && Pinn.health > 0) {
+            if (!sick && Pinn.health >= 0) {
                 clearInterval(healthRunner)
             } else if (sick) {
                 if(Pinn.health <= 0) {
@@ -58,7 +58,7 @@ function Medicine(){
         Pinn.sick = 1
         sick = false
     }
-    moneyHTML.innerText = `Money: ${Pinn.money}`
+    moneyHTML.innerText = `Dinheiro: ${Pinn.money}`
 }
 
 function Food(satiety, quality, price){
@@ -276,7 +276,7 @@ function generateChallenge(){
 
 
 function getDifficulty() {
-    return parseInt(time / 60 + 1)
+    return parseInt(time / 120 + 1)
 }
 
 function choose(array) {
