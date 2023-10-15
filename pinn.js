@@ -28,7 +28,7 @@ var healthRunner
 var sick = false
 
 function getSick(){
-    Pinn.sick = Math.random().toFixed(1)
+    Pinn.sick = parseInt(9 - Math.random() * 5) / 10
     console.log(Pinn.sick)
     sick = true
     healthRunner = 
@@ -91,6 +91,7 @@ function MentalHealthCare(intensity, price){
         Pinn.happiness += intensity * 25
     }
     if(Pinn.happiness > 100){Pinn.happiness = 100}
+    moneyHTML.innerText = `Dinheiro: ${Pinn.money}`
 }
 
 function Cure(){
@@ -99,6 +100,7 @@ function Cure(){
         Pinn.health += 20
     }
     if(Pinn.health > 100){Pinn.health = 100}
+    moneyHTML.innerText = `Dinheiro: ${Pinn.money}`
 }
 
 // hungerRunner()
