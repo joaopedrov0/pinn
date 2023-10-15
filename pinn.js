@@ -309,10 +309,10 @@ const Shopping = {
             price: '75',
         },
         {
-            name: 'Abacate',
+            name: 'Miojo',
             quality: '1',
             satiety: '1',
-            price: '1',
+            price: '5',
         },
         {
             name: 'Salada de Frutas',
@@ -321,22 +321,22 @@ const Shopping = {
             price: '125',
         },
         {
-            name: 'Sorvete',
-            quality: '1',
+            name: 'Amendoim Japonês',
+            quality: '2',
             satiety: '1',
-            price: '30',
+            price: '20',
         },
         {
             name: 'Spaghetti',
-            quality: '2',
+            quality: '3',
             satiety: '4',
-            price: '100',
+            price: '200',
         },
         {
-            name: 'Queijo',
-            quality: '3',
-            satiety: '3',
-            price: '200',
+            name: 'Vitamina insana',
+            quality: '4',
+            satiety: '15',
+            price: '650',
         }
     ],
     health: [
@@ -346,17 +346,17 @@ const Shopping = {
         {
             name: 'Psicólogo',
             intensity: '4',
-            price: '400'
+            price: '300'
         },
         {
             name: 'Videogames',
             intensity: '1',
-            price: '50'
+            price: '100'
         },
         {
             name: 'Cinema',
             intensity: '2',
-            price: '200'
+            price: '190'
         },
         {
             name: 'Spa',
