@@ -297,28 +297,34 @@ generateChallenge()
 const Shopping = {
     food: [
         {
-            name: 'Pizza',
+            name: 'Miojo',
             quality: '1',
-            satiety: '4',
-            price: '100',
+            satiety: '1',
+            price: '10',
+        },
+        {
+            name: 'Hamburgão da cantina',
+            quality: '0',
+            satiety: '1',
+            price: '6',
+        },
+        {
+            name: 'Cebolitos',
+            quality: '1',
+            satiety: '2',
+            price: '15',
         },
         {
             name: 'Hamburguer',
             quality: '1',
             satiety: '3',
-            price: '75',
+            price: '20',
         },
         {
-            name: 'Miojo',
+            name: 'Pizza',
             quality: '1',
-            satiety: '1',
-            price: '5',
-        },
-        {
-            name: 'Salada de Frutas',
-            quality: '4',
-            satiety: '2',
-            price: '125',
+            satiety: '4',
+            price: '25',
         },
         {
             name: 'Amendoim Japonês',
@@ -327,8 +333,92 @@ const Shopping = {
             price: '20',
         },
         {
+            name: 'Bisnaguinha',
+            quality: '3',
+            satiety: '1',
+            price: '40',
+        },
+        {
+            name: 'Pão de Queijo',
+            quality: '3',
+            satiety: '1',
+            price: '40',
+        },
+        {
+            name: 'Maçã',
+            quality: '4',
+            satiety: '1',
+            price: '80',
+        },
+        {
+            name: 'Uva',
+            quality: '4',
+            satiety: '1',
+            price: '80',
+        },
+        {
+            name: 'Manga',
+            quality: '4',
+            satiety: '1',
+            price: '80',
+        },
+        {
+            name: 'Pera',
+            quality: '4',
+            satiety: '1',
+            price: '80',
+        },
+        {
+            name: 'Cory',
+            quality: '2',
+            satiety: '2',
+            price: '30',
+        },
+        {
+            name: 'Gatorade',
+            quality: '3',
+            satiety: '2',
+            price: '60',
+        },
+        {
+            name: 'Salada de frutas',
+            quality: '4',
+            satiety: '2',
+            price: '120',
+        },
+        {
+            name: 'Strogonoff',
+            quality: '2',
+            satiety: '3',
+            price: '40',
+        },
+        {
+            name: 'Arroz e feijão',
+            quality: '3',
+            satiety: '3',
+            price: '80',
+        },
+        {
+            name: 'Burrito',
+            quality: '4',
+            satiety: '3',
+            price: '160',
+        },
+        {
+            name: 'Doritos',
+            quality: '2',
+            satiety: '4',
+            price: '50',
+        },
+        {
             name: 'Spaghetti',
             quality: '3',
+            satiety: '4',
+            price: '100',
+        },
+        {
+            name: 'Subway Vegano',
+            quality: '4',
             satiety: '4',
             price: '200',
         },
@@ -337,7 +427,14 @@ const Shopping = {
             quality: '4',
             satiety: '15',
             price: '650',
-        }
+        },
+        {
+            name: 'Azzip',
+            quality: '4',
+            satiety: '1000',
+            price: '1000000',
+        },
+        
     ],
     health: [
 
