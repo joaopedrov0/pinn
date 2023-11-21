@@ -20,11 +20,34 @@
         <link rel="stylesheet" href="styles/lastest.css">
         <link rel="stylesheet" href="styles/info.css">
         <link rel="stylesheet" href="styles/table.css">
+        <link rel="stylesheet" href="styles/initial.css">
+        <link rel="stylesheet" href="styles/score.css">
 
         <!--Mobile Stylesheets, keep it below other stylesheets-->
         <link rel="stylesheet" href="styles/mobile.css">
     </head>
     <body>
+        <!-- Initial screen -->
+        <div class="initial">
+            <div class="wrap">
+                <h1>Bem vindo(a) ao Pinn!</h1>
+                <p>Bem... Uma explicação rápida caso esteja com pressa...</p>
+                <p>Resolva o máximo de contas que conseguir o mais rápido possível para manter Pinn vivo!</p>
+                <p>Boa sorte 😉</p>
+                <p>Se precisar de mais informações, no canto inferior direito tem um botão que pode te ajudar!</p>
+                <div class="start-btn" onclick="start()">Começar!</div>
+            </div>
+        </div>
+        <!-- Score screen -->
+        <div class="score">
+            <div class="wrap">
+                
+            </div>
+        </div>
+        <!-- Settings screen -->
+        <div class="settings"></div>
+
+
         <div class="info-btn" onclick="toggleInfo()">?</div>
         <div class="info hidden">
             <div class="info-btn" onclick="toggleInfo()">Voltar para o jogo</div>
@@ -65,12 +88,6 @@
             <div class="money">Dinheiro: 0</div>
             <hr>
             <div class="products">
-                <div class="food">
-                    <h2>Comidas</h2>
-                    <hr>
-                    <div class="product-area">
-                    </div>
-                </div>
                 <div class="medArea">
                     <h2>Farmácia</h2>
                     <hr>
@@ -88,6 +105,12 @@
                     </div>
                     
                 </div>
+                <div class="food">
+                    <h2>Comidas</h2>
+                    <hr>
+                    <div class="product-area">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="math">
@@ -104,5 +127,6 @@
 
         <script src="pinn.js"></script>
         <script src="info.js"></script>
+        <script src="modal.js"></script>
     </body>
 </html>

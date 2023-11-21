@@ -7,21 +7,8 @@ const Pinn = {
     sick: 1
 }
 
-let hungerRunner =
-    setInterval(function() {
-        let hungerCoeficient = parseInt(Pinn.hunger / 20)
-        if(Pinn.hunger === 0) clearInterval(hungerRunner)
-        if ([Pinn.hunger, Pinn.health, Pinn.happiness].sort((a, b) => a - b)[0] === 0) dead()
-        Pinn.hunger--
-        renderStatus()
-        if(Pinn.hunger != hungerCoeficient) {renderPinn()}
-    }, 1000)
-let  happinessRunner =
-    setInterval(function() {
-        if(Pinn.happiness === 0) clearInterval(happinessRunner)
-        Pinn.happiness--
-        renderStatus()
-    }, 10000 * Pinn.sick)
+let hungerRunner
+let happinessRunner
 
 var healthRunner
 
@@ -154,11 +141,7 @@ function renderStatus() {
 renderPinn()
 
 let time = 0
-let timeRunner = 
-    setInterval(function() {
-        time++
-        timer.innerText = `Tempo de vida: ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`
-    }, 1000)
+let timeRunner
 
 
 function beautifyNumber(number){
@@ -169,14 +152,20 @@ function beautifyNumber(number){
     }
 }
 
-function dead(){
+function dead(reset){
     clearInterval(timeRunner)
     clearInterval(hungerRunner)
     clearInterval(healthRunner)
     clearInterval(happinessRunner)
     sick = false
     renderPinn()
-    alert(`Pinn morreu, seu tempo de sobrevivência foi de ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`)
+    // if (!reset) alert(`Pinn morreu, seu tempo de sobrevivência foi de ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`)
+    if (!reset) {
+        document.querySelector('.score').style.display = "flex"
+        document.querySelector('.score .wrap').innerHTML = `<h1>Pinn morreu! 😭</h1>
+        <h2>Mas você conseguiu mantê-lo vivo por ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}</h2>
+        <img src="images/dead.png" alt="dead pinn"/><div class="start-btn" onclick="restart()">Jogar novamente!</div>`
+    }
 }
 
 //capitalism area
@@ -493,3 +482,44 @@ function toggleShop() {
     button.classList.toggle('active')
     shopping.classList.toggle('active')
 }
+
+
+
+
+function startGame() {
+    dead(true)
+    Pinn.status = "happy"
+    Pinn.hunger = 80
+    Pinn.health = 80
+    Pinn.happiness = 80
+    Pinn.money = 0
+    Pinn.sick = 1
+
+    renderPinn()
+    renderStatus()
+    
+    time = 0
+
+    hungerRunner =
+    setInterval(function() {
+        let hungerCoeficient = parseInt(Pinn.hunger / 20)
+            if(Pinn.hunger === 0) clearInterval(hungerRunner)
+            if ([Pinn.hunger, Pinn.health, Pinn.happiness].sort((a, b) => a - b)[0] === 0) dead()
+            Pinn.hunger--
+            renderStatus()
+            if(Pinn.hunger != hungerCoeficient) {renderPinn()}
+            }, 1000)
+    happinessRunner =
+        setInterval(function() {
+            if(Pinn.happiness === 0) clearInterval(happinessRunner)
+            Pinn.happiness--
+            renderStatus()
+        }, 10000 * Pinn.sick)
+    timeRunner = 
+        setInterval(function() {
+            time++
+            timer.innerText = `Tempo de vida: ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`
+        }, 1000)
+}
+
+startGame()
