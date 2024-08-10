@@ -206,7 +206,7 @@ answerForm.addEventListener('submit', (e) => {
     moneyHTML.innerText = `Dinheiro: ${Pinn.money}`
     answerInput.value = ''
     generateChallenge()
-    reward = 20
+    reward = 30
     lastestElapsedTime.innerText = `Tempo na última conta: ${elapsedTime} segundos`
     elapsedTime = 0
     elapsedTimeHTML.innerText = `Tempo nessa questão: ${elapsedTime} segundos`
@@ -508,7 +508,7 @@ function startGame() {
             Pinn.hunger--
             renderStatus()
             if(Pinn.hunger != hungerCoeficient) {renderPinn()}
-            }, 2000)
+            }, 1000)
     happinessRunner =
         setInterval(function() {
             if(Pinn.happiness === 0) clearInterval(happinessRunner)
