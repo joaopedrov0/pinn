@@ -15,7 +15,7 @@ var healthRunner
 var sick = false
 
 function getSick(){
-    Pinn.sick = parseInt(9 - Math.random() * 5) / 10
+    Pinn.sick = parseInt(9 - Math.random() * 3) / 10
     console.log(Pinn.sick)
     sick = true
     healthRunner = 
@@ -508,7 +508,7 @@ function startGame() {
             Pinn.hunger--
             renderStatus()
             if(Pinn.hunger != hungerCoeficient) {renderPinn()}
-            }, 1000)
+            }, 2000)
     happinessRunner =
         setInterval(function() {
             if(Pinn.happiness === 0) clearInterval(happinessRunner)
