@@ -508,7 +508,7 @@ function startGame() {
             Pinn.hunger--
             renderStatus()
             if(Pinn.hunger != hungerCoeficient) {renderPinn()}
-            }, 1000)
+            }, 1500)
     happinessRunner =
         setInterval(function() {
             if(Pinn.happiness === 0) clearInterval(happinessRunner)
