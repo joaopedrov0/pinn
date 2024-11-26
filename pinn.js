@@ -7,9 +7,8 @@ const Pinn = {
     sick: 1
 }
 
-let hungerRunner
-let happinessRunner
-
+var hungerRunner
+var happinessRunner
 var healthRunner
 
 var sick = false
@@ -521,5 +520,3 @@ function startGame() {
             timer.innerText = `Tempo de vida: ${beautifyNumber(parseInt(time / 3600))}:${beautifyNumber(parseInt((time % 3600) / 60))}:${beautifyNumber(parseInt(time % 60))}`
         }, 1000)
 }
-
-startGame()
